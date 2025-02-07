@@ -5,6 +5,7 @@ html, body {
 }
 *, *::before, *::after {
     box-sizing: inherit;
+    font-family: Verdana, sans-serif;
 }
 
 body {
