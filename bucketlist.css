@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Verdana, sans-serif;
 }
 
 body {
@@ -14,6 +13,7 @@ body {
     padding: 0;
     min-height: 100vh;
     width: 100%;
+    font-family: Verdana, sans-serif;
 }
 
 .logo-container {
