@@ -1,11 +1,7 @@
-html, body {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-*, *::before, *::after {
-    box-sizing: inherit;
-    font-family: Verdana, sans-serif;
 }
 
 body {
@@ -16,6 +12,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    font-family: Verdana, sans-serif;
 }
 
 .logo-container {
