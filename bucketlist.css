@@ -41,8 +41,7 @@ main {
     color: white;
     min-height: 10rem;
     width: 30rem;
-    padding: 100rem auto;
-    text-align: center;
+    padding: 2rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +66,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3rem;
 }
 
 #bucket-list {
@@ -85,7 +83,12 @@ main {
     cursor: pointer;
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    transition: 1s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+#bucket-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight */
+    border-radius: 4px;
 }
 
 #bucket-list li.checked {
