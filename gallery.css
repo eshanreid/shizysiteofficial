@@ -1,7 +1,10 @@
-* {
+html, body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 body {
@@ -142,7 +145,7 @@ nav ul li a.active {
 body#bodyi {
     font-family: Arial, sans-serif;
     background-image: url(background.svg);
-    background-repeat: none;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
@@ -194,7 +197,7 @@ button#butti {
     float: right;
   }
   
-  button#butti{
+  button#butti {
     background: black;
     box-shadow: 0 0 25px rgb(255, 0, 0);
   }
