@@ -71,6 +71,7 @@ nav {
     align-items: center;
     background-color: #000;
     color: white;
+    height: 4.7rem;
 }
 nav ul {
     display: flex;
@@ -79,9 +80,8 @@ nav ul {
     list-style: none;
     width: 100%;
 }
-nav ul li {
-    height: 4.7rem;
-}
+
+
 nav ul li a {
     color: white;
     text-decoration: none;
