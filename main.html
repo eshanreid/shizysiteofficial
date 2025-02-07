@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <h1 id="logo">ShizySite</h1>
+        </div>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="gallery.html">Piccys</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="ily.html">LuhYou</a></li>
+            <li><a href="login.html">Toodles</a></li>
+        </ul>
+        <ul>
+            <li class="hideOnMobile"><a href="gallery.html">Piccys</a></li>
+            <li class="hideOnMobile"><a href="timeline.html">Timeline</a></li>
+            <li class="hideOnMobile"><a href="ily.html">LuhYou</a></li>
+            <li><a href="login.html">Toodles</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="main-container">
+        <h1 id="welcomeh">Yooo welcome to ShizySite</h1>
+            <p id="welcomep1">Your details matched.</p>
+            <p id="welcomep2">This website was designed to creatively
+                express my love for you (and to make hoes jealous). I hope you
+            enjoy looking around and regularly come back.</p>
+            <img src="mr-shizy.png" width="115px" height="150px">
+        </div>
+
+
+        <section class="countdown">
+            <div class="countdowndiv">
+                <h2>Countdown to Eshan's Birthday</h2>
+                <div class="timebox">
+                    <div class="time">
+                        <h3 id="days">00</h3>
+                        <p>Days</p>
+                    </div>
+                    <div class="time">
+                        <h3 id="hours">00</h3>
+                        <p>Hours</p>
+                    </div>
+                    <div class="time">
+                        <h3 id="minutes">00</h3>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="time">
+                        <h3 id="seconds">00</h3>
+                        <p>Seconds</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var countDownDate = new Date("Jan 24, 2026 00:00:00").getTime();
+                var x = setInterval(function(){
+                    var now = new Date().getTime();
+                    var distance = countDownDate - now;
+
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').innerHTML = days;
+                    document.getElementById('hours').innerHTML = hours;
+                    document.getElementById('minutes').innerHTML = minutes;
+                    document.getElementById('seconds').innerHTML = seconds;
+                },1000);
+            </script>
+        </section>
+        <section class="countdown2">
+            <div class="countdowndiv2">
+                <h2>Countdown to Aliza's Birthday</h2>
+                <div class="timebox2">
+                    <div class="time2">
+                        <h3 id="days2">00</h3>
+                        <p>Days</p>
+                    </div>
+                    <div class="time2">
+                        <h3 id="hours2">00</h3>
+                        <p>Hours</p>
+                    </div>
+                    <div class="time2">
+                        <h3 id="minutes2">00</h3>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="time2">
+                        <h3 id="seconds2">00</h3>
+                        <p>Seconds</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var countDownDate2 = new Date("Nov 3, 2025 00:00:00").getTime();
+                var x2 = setInterval(function(){
+                    var now2 = new Date().getTime();
+                    var distance2 = countDownDate2 - now2;
+
+                    var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+                    var hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+
+                    document.getElementById('days2').innerHTML = days2;
+                    document.getElementById('hours2').innerHTML = hours2;
+                    document.getElementById('minutes2').innerHTML = minutes2;
+                    document.getElementById('seconds2').innerHTML = seconds2;
+                },1000);
+            </script>
+        </section>
+    </main>
+
+<script src="shizysite.js"></script>
+
+
+</body>
+</html>

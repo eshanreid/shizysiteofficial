@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piccys</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <h1 id="logo">ShizySite</h1>
+        </div>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="ily.html">LuhYou</a></li>
+            <li><a href="login.html">Toodles</a></li>
+        </ul>
+        <ul>
+            <li class="hideOnMobile"><a href="main.html">Home</a></li>
+            <li class="hideOnMobile"><a href="timeline.html">Timeline</a></li>
+            <li class="hideOnMobile"><a href="ily.html">LuhYou</a></li>
+            <li><a href="login.html">Toodles</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="main-container">
+        <h1 id="welcomeh">Yooo welcome to ShizySite</h1>
+            <p id="welcomep1">Your details matched.</p>
+            <p id="welcomep2">This website was designed to creatively
+                express my love for you (and to make hoes jealous). I hope you
+            enjoy looking around and regularly come back.</p>
+            
+        </div>
+    </main>
+    <script src="shizysite.js"></script>
+</body>
+</html>

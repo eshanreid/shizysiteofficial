@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(background.svg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.logo-container {
+    padding: 0;
+    margin-top: 1rem;
+    justify-content: flex-start;
+}
+#logo {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(0.5rem, 1.5rem, 2rem);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-container {
+    color: white;
+    min-height: 10rem;
+    width: 30rem;
+    padding: 100rem auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#timelineh {
+    padding-top: 1rem;
+    font-size: clamp(1rem, 2.5rem, 3rem);
+}
+#timelinep1 {
+    padding-top: 1rem;
+    font-size: clamp(0.5rem, 1rem, 1.5rem);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: white;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+}
+nav ul li {
+    height: 4.7rem;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+nav ul li a:hover {
+    background-color: red;
+}
+nav ul li a.active {
+    background-color: red;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 20rem;
+    z-index: 999;
+    background-color: #3d0101aa;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li {
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+}
+.sidebar a:hover {
+    background-color: #2e0202;
+}
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+    .sidebar {
+        width: 100%;
+        transition: width 0.5s ease;
+        
+    }
+}
+
+
