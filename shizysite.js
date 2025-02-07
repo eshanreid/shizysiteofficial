@@ -48,15 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener to toggle item
     items.forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('completed');
+        item.addEventListener('click', function () { // Make sure it's a function, not a missing variable
+            this.classList.toggle('completed');
 
             // Save state to localStorage
-            if (item.classList.contains('completed')) {
-                localStorage.setItem(item.textContent, 'completed');
+            if (this.classList.contains('completed')) {
+                localStorage.setItem(this.textContent, 'completed');
             } else {
-                localStorage.removeItem(item.textContent);
+                localStorage.removeItem(this.textContent);
             }
         });
     });
 });
+
