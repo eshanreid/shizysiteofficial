@@ -36,28 +36,37 @@ function hideSidebar() {
 
 // bucket list
 
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('#bucket-list li');
+// script.js
 
-    // Load saved completed state
-    items.forEach(item => {
-        if (localStorage.getItem(item.textContent) === 'completed') {
-            item.classList.add('completed');
+// Select the bucket list
+const bucketList = document.getElementById('bucket-list');
+
+// Load the saved state from localStorage
+function loadState() {
+    const savedState = JSON.parse(localStorage.getItem('bucketListState')) || {};
+    Array.from(bucketList.children).forEach((item, index) => {
+        if (savedState[index]) {
+            item.classList.add('checked');
         }
     });
+}
 
-    // Event listener to toggle item
-    items.forEach(item => {
-        item.addEventListener('click', function () { // Make sure it's a function, not a missing variable
-            this.classList.toggle('completed');
-
-            // Save state to localStorage
-            if (this.classList.contains('completed')) {
-                localStorage.setItem(this.textContent, 'completed');
-            } else {
-                localStorage.removeItem(this.textContent);
-            }
-        });
+// Save the current state to localStorage
+function saveState() {
+    const state = {};
+    Array.from(bucketList.children).forEach((item, index) => {
+        state[index] = item.classList.contains('checked');
     });
+    localStorage.setItem('bucketListState', JSON.stringify(state));
+}
+
+// Add event listeners to each list item
+bucketList.addEventListener('click', (event) => {
+    if (event.target.tagName === 'LI') {
+        event.target.classList.toggle('checked');
+        saveState();
+    }
 });
 
+// Load the state when the page loads
+loadState();
