@@ -139,7 +139,7 @@ nav ul li a.active {
 
 /* index css */
 
-body #bodyi {
+body#bodyi {
     font-family: Arial, sans-serif;
     background-image: url(background.svg);
     background-repeat: none;
@@ -159,7 +159,7 @@ body #bodyi {
     text-align: left;
 }
 
-h2 #h2i {
+h2#h2i {
     margin-bottom: 20px;
 }
 
@@ -180,7 +180,7 @@ input {
 }
 
 /* From Uiverse.io by mrhyddenn */ 
-button #butti {
+button#butti {
     padding: 10px 20px;
     border: none;
     font-size: 17px;
@@ -194,12 +194,12 @@ button #butti {
     float: right;
   }
   
-  button #butti{
+  button#butti{
     background: black;
     box-shadow: 0 0 25px rgb(255, 0, 0);
   }
   
-  button #butti:hover {
+  button#butti:hover {
     background-color: red;
   }
 
