@@ -34,4 +34,10 @@ function hideSidebar() {
 }
 
 
-// Countdown
+// Bucket List
+
+function toggleItem(item) {
+  // Toggle the 'completed' class on the clicked item
+  item.classList.toggle('completed');
+}
+
