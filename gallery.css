@@ -194,12 +194,12 @@ button #butti {
     float: right;
   }
   
-  button {
+  button #butti{
     background: black;
     box-shadow: 0 0 25px rgb(255, 0, 0);
   }
   
-  button:hover {
+  button #butti:hover {
     background-color: red;
   }
 
