@@ -27,7 +27,7 @@ body {
     color: white;
     font-family: 'Pacifico', cursive;
     font-size: clamp(0.5rem, 1.5rem, 2rem);
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -88,7 +88,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     height: 100%;
-    padding: 0 1rem;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
 }
