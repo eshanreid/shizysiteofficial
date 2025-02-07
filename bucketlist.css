@@ -47,11 +47,11 @@ main {
     flex-direction: column;
 }
 
-#timelineh {
+#bucketlisth1 {
     padding-top: 1rem;
     font-size: clamp(1rem, 2.5rem, 3rem);
 }
-#timelinep1 {
+#bucketlistp {
     padding-top: 1rem;
     font-size: clamp(0.5rem, 1rem, 1.5rem);
 }
