@@ -34,34 +34,29 @@ function hideSidebar() {
 }
 
 
-// Bucket List
-
-function toggleItem(item) {
-  // Toggle the 'completed' class on the clicked item
-  item.classList.toggle('completed');
-}
+// bucket list
 
 document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('#bucket-list li');
-  
-  // Load saved completed state
-  items.forEach(item => {
-    if (localStorage.getItem(item.textContent) === 'completed') {
-      item.classList.add('completed');
-    }
-  });
+    const items = document.querySelectorAll('#bucket-list li');
 
-  // Event listener to toggle item
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('completed');
-      // Save state to localStorage
-      if (item.classList.contains('completed')) {
-        localStorage.setItem(item.textContent, 'completed');
-      } else {
-        localStorage.removeItem(item.textContent);
-      }
+    // Load saved completed state
+    items.forEach(item => {
+        if (localStorage.getItem(item.textContent) === 'completed') {
+            item.classList.add('completed');
+        }
     });
-  });
-});
 
+    // Event listener to toggle item
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('completed');
+
+            // Save state to localStorage
+            if (item.classList.contains('completed')) {
+                localStorage.setItem(item.textContent, 'completed');
+            } else {
+                localStorage.removeItem(item.textContent);
+            }
+        });
+    });
+});
