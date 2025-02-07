@@ -34,7 +34,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    flex-direction
+    flex-direction: column;
 }
 
 .main-container {
@@ -64,6 +64,10 @@ main {
 .bucketlist {
     margin-top: 2rem;
     width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
 }
 
 #bucket-list {
