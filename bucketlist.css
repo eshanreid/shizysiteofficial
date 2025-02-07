@@ -70,14 +70,18 @@ main {
     list-style-type: none;
     padding: 0;
     color: white;
-    margin-top: 2rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #bucket-list li {
     cursor: pointer;
-    font-size: 18px;
-    padding: 8px;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: 1s ease;
 }
 
 #bucket-list li.completed {
