@@ -80,7 +80,8 @@ nav ul {
     list-style: none;
     width: 100%;
 }
-
+nav ul li {
+    height: 4.7rem;
 
 nav ul li a {
     color: white;
