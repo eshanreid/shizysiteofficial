@@ -58,9 +58,10 @@ main {
 #bucketlistp {
     padding-top: 1rem;
     font-size: clamp(0.5rem, 1rem, 1.5rem);
+    margin-bottom: 2rem;
 }
 
-div.bucketlist {
+.bucketlist {
     margin-top: 2rem;
     width: 85%;
 }
@@ -69,6 +70,7 @@ div.bucketlist {
     list-style-type: none;
     padding: 0;
     color: white;
+    margin-top: 2rem;
 }
 
 #bucket-list li {
