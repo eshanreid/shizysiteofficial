@@ -58,6 +58,7 @@ main {
 #ily-p {
     padding-top: 1rem;
     font-size: clamp(0.5rem, 1rem, 1.5rem);
+    margin-bottom: 1.25rem;
 }
 
 nav {
