@@ -1,7 +1,7 @@
 // Predefined users
 const users = [
     { username: "eshy", password: "thickthighs311" },
-    { username: "notyet", password: "iloveEsh69" }
+    { username: "lizy", password: "iloveEsh69" }
 ];
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
