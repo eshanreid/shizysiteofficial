@@ -40,7 +40,7 @@ main {
     color: white;
     height: 10rem;
     width: 30rem;
-    margin: 5rem auto 5rem auto;
+    margin: 5rem auto 3rem auto;
     text-align: center;
 }
 
@@ -56,9 +56,9 @@ main {
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 1.5rem;
     justify-content: center;
-    margin: 5rem auto;
+    margin: 1rem 2rem;
 }
 
 .gallery-img {
@@ -70,7 +70,7 @@ main {
 }
 
 .gallery-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* The Modal (background) */
