@@ -28,26 +28,58 @@
     </nav>
 
     <main>
-        <div class="main-container">
-        <h1 id="bucketlisth1">The Bucket List</h1>
-            <p id="bucketlistp">Check off everything we've accomplished together</p>
+        
+        <div class="bucketlistcontainer">
+            <div class="bucketlist-page">
+                <h2>Bucket List</h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add item">
+                    <button onclick="addItem()" class="bucketbutton">Add</button>
+                </div>
+                <ul id="list-container">
+                    <!-- <li class="checked">1</li>
+                    <li>2</li>
+                    <li>3</li> -->
+                </ul>
+                <script>
+                    const inputBox = document.getElementById("input-box");
+                    const listContainer = document.getElementById("list-container");
+
+                    function addItem(){
+                        if(inputBox.value === ''){
+                        alert("Write something dumbass");
+                        }
+                        else{
+                            let li = document.createElement("li");
+                            li.innerHTML = inputBox.value;
+                            let span = document.createElement("span");
+                            span.innerHTML = "\u00d7";
+                            li.appendChild(span);
+                            listContainer.appendChild(li);
+                            li.appendChild(span);
+                        }
+                        inputBox.value = "";
+                        saveData();
+                    }
+                    listContainer.addEventListener("click", function(e){
+                        if(e.target.tagName === "LI"){
+                            e.target.classList.toggle("checked");
+                        }
+                        else if(e.target.tagName === "SPAN"){
+                            e.target.parentElement.remove();
+                            saveData();
+                        }
+                    }, false);
+                    function saveData(){
+                        localStorage.setItem("data", listContainer.innerHTML);
+                    }
+                    function showItem(){
+                        listContainer.innerHTML = localStorage.getItem("data"); 
+                    }
+                    showItem();
+                </script>
         </div>
-        <div class="bucketlist">
-            <ul id="bucket-list">
-                <li>Get married</li>
-                <li>Move out together</li>
-                <li>Our first holiday together</li>
-                <li>Get a kitty (name it Shizy frfr)</li>
-                <li>Buy matchy cars</li>
-                <li>Meet each other's parents</li>
-                <li>Graduate</li>
-                <li>Cook a dish together</li>
-                <li>Bake something together</li>
-                <li>Go to gym together</li>
-                <li>Matchy shoes</li>
-                <li>Get a pet axolotl</li>
-            </ul>
-        </div>
+        
         
     </main>
     <script src="shizysite.js"></script>
