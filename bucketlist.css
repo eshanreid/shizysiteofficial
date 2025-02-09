@@ -29,73 +29,100 @@ body {
     margin-bottom: 1rem;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.bucketlistcontainer {
     width: 100%;
-    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #790907, #042163);
+    padding: 0.8rem;
+
 }
 
-.main-container {
-    color: white;
-    min-height: 10rem;
-    width: 30rem;
-    padding: 2rem 1rem;
+.bucketlist-page {
+    width: 100%;
+    max-width: 80%;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.bucketlist-page h2 {
+    color: #002765;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    font-family: Verdana, sans-serif;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.4rem;
 }
 
-#bucketlisth1 {
-    padding-top: 1rem;
-    font-size: clamp(1rem, 2rem, 3rem);
-}
-#bucketlistp {
-    padding-top: 1rem;
-    font-size: clamp(0.5rem, 1rem, 1.5rem);
-}
-
-.bucketlist {
-    margin-top: 2rem;
-    width: 85%;
+.row {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 1.9rem;
+    margin-bottom: 1.5rem;
 }
 
-#bucket-list {
-    list-style-type: none;
-    padding: 0;
-    color: white;
-    margin: 1rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.6rem;
 }
 
-#bucket-list li {
-    cursor: pointer;
+.bucketbutton {
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    background: #ff5945;
+    color: #fff;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    cursor: pointer;
+    border-radius: 2.1rem;
 }
 
-#bucket-list li:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight */
-    border-radius: 4px;
+#list-container li {
+    list-style: none;
+    font-size: 1rem;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
 }
-
-#bucket-list li.checked {
+#list-container li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 0.5rem;
+    left: 0rem;
+}
+#list-container li.checked {
+    color: #555;
     text-decoration: line-through;
-    color: grey;
 }
-
+#list-container li.checked::before {
+    background-image: url(checked.png);
+}
+#list-container li span {
+    position: absolute;
+    top: 0rem;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    color: #555;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 50%;
+}
+#list-container li span:hover {
+    background: #edeef0;
+}
 
 nav {
     display: flex;
@@ -170,5 +197,4 @@ nav ul li a.active {
         
     }
 }
-
 
