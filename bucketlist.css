@@ -79,6 +79,8 @@ input {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 2.1rem;
+    height: auto;
+    max-width: 100%;
 }
 
 #list-container li {
