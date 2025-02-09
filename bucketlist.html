@@ -53,57 +53,55 @@
 
                     function addItem() {
                         if (inputBox.value.trim() === "") {
-                        alert("Write something dumbass");
-                        return;
+                            alert("Write something dumbass");
+                            return;
+                            
                     }
-                        const li = document.createElement("li");
-                        li.textContent = inputBox.value;
-
-                        const span = document.createElement("span");
-                        span.textContent = "\u00d7"; // Unicode for "×"
-                        li.appendChild(span);
-
+                        
+                        const li = createListItem(inputBox.value);
                         listContainer.appendChild(li);
-
                         inputBox.value = "";
 
                         saveData();
                     }
 
-                    listContainer.addEventListener("click", function (e) {
-                        if (e.target.tagName === "LI") {
-                            e.target.classList.toggle("checked");
-                            saveData(); // Save the updated state
-                        } else if (e.target.tagName === "SPAN") {
-                            e.target.parentElement.remove();
-                            saveData(); // Save the updated state
-                        }
-                    });
+                    function createListItem(text, checked = false) {
+                        const li = document.createElement("li");
+                        li.textContent = text;
+                        if (checked) li.classList.add("checked");
+
+                        const span = document.createElement("span");
+                        span.textContent = "\u00d7"; // Unicode for "×"
+                        li.appendChild(span);
+
+                        li.addEventListener("click", () => {
+                            li.classList.toggle("checked");
+                            saveData();
+                        });
+
+                        span.addEventListener("click", (e) = {
+                            e.stopPropagation();
+                            li.remove();
+                            saveData();
+                        });
+
+                        return li;
+                    }
 
                     function saveData() {
-                        localStorage.setItem("data", listContainer.innerHTML);
+                        const data = [];
+                        listContainer.querySelectorAll("li").forEach((li) => {
+                            data.push({ text: li.firstChild.textContent, checked: li.classList.contains("checked") });
+                        });
+                        localStorage.setItem("data", JSON.stringify(data));
                     }
 
                     function showItem() {
                         const savedData = localStorage.getItem("data");
                         if (savedData) {
-                            listContainer.innerHTML = savedData;
-
-                            const items = listContainer.querySelectorAll("li");
-                            items.forEach((item) => {
-                                item.addEventListener("click", () => {
-                                    item.classList.toggle("checked");
-                                    saveData();
-                                });
-
-                                const span = item.querySelector("span");
-                                    if (span) {
-                                        span.addEventListener("click", (e) => {
-                                        e.stopPropagation(); // Prevent triggering the LI click event
-                                        item.remove();
-                                        saveData();
-                                    });
-                                }
+                            JSON.parse(savedData).forEach(({ text, checked }) => {
+                                const li = createListItem(text, checked);
+                                listContainer.appendChild(li);
                             });
                         }
                     }
