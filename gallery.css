@@ -39,7 +39,6 @@ main {
 .main-container {
     color: white;
     height: 10rem;
-    width: 30rem;
     margin: 5rem auto 3rem auto;
     text-align: center;
 }
@@ -67,6 +66,7 @@ main {
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
+    justify-content: center;
 }
 
 .gallery-img:hover {
@@ -140,6 +140,7 @@ main {
 @media (max-width: 768px) {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        padding: 0 1rem;
     }
 }
 
