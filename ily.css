@@ -41,7 +41,7 @@ main {
 
 .main-container {
     color: white;
-    width: 30rem;
+    width: 100%
     margin-bottom: 5rem;
     padding: 10rem auto;
     text-align: center;
@@ -97,7 +97,7 @@ nav ul li a.active {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 20rem;
+    width: 100%;
     z-index: 999;
     background-color: #3d0101aa;
     backdrop-filter: blur(10px);
@@ -129,6 +129,7 @@ nav ul li a.active {
     }
     .sidebar {
         width: 100%;
+        height: 100vh
         transition: width 0.5s ease;
         
     }
