@@ -319,7 +319,7 @@ button#butti {
   }
   
   button#butti {
-    background: #3d0000;
+    background: #950101;
     box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.75);
   }
   
@@ -335,8 +335,8 @@ button#butti {
 
 @media (max-width: 768px) {
     .login-container {
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
