@@ -48,67 +48,78 @@
                     <li>3</li> -->
                 </ul>
                 <script>
-                    const inputBox = document.getElementById("input-box");
-                    const listContainer = document.getElementById("list-container");
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
 
-                    function addItem() {
-                        if (inputBox.value.trim() === "") {
-                        alert("Write something dumbass");
-                        return;
-                    }
-                        const li = document.createElement("li");
-                        li.textContent = inputBox.value;
+function addItem(text = inputBox.value) {
+    if (text.trim() === "") {
+        alert("Write something dumbass");
+        return;
+    }
 
-                        const span = document.createElement("span");
-                        span.textContent = "\u00d7"; // Unicode for "×"
-                        li.appendChild(span);
+    const li = document.createElement("li");
+    li.textContent = text;
 
-                        listContainer.appendChild(li);
+    const span = document.createElement("span");
+    span.textContent = "\u00d7"; // Unicode for "×"
+    li.appendChild(span);
 
-                        inputBox.value = "";
+    listContainer.appendChild(li);
+    inputBox.value = "";
 
-                        saveData();
-                    }
+    attachEventListeners(li); // Ensure the item has event listeners
+    saveData();
+}
 
-                    listContainer.addEventListener("click", function (e) {
-                        if (e.target.tagName === "LI") {
-                            e.target.classList.toggle("checked");
-                            saveData(); // Save the updated state
-                        } else if (e.target.tagName === "SPAN") {
-                            e.target.parentElement.remove();
-                            saveData(); // Save the updated state
-                        }
-                    });
+function attachEventListeners(li) {
+    li.addEventListener("click", function () {
+        this.classList.toggle("checked");
+        saveData();
+    });
 
-                    function saveData() {
-                        localStorage.setItem("data", listContainer.innerHTML);
-                    }
+    const span = li.querySelector("span");
+    if (span) {
+        span.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent toggling check when clicking "×"
+            li.remove();
+            saveData();
+        });
+    }
+}
 
-                    function showItem() {
-                        const savedData = localStorage.getItem("data");
-                        if (savedData) {
-                            listContainer.innerHTML = savedData;
+function saveData() {
+    const items = [];
+    listContainer.querySelectorAll("li").forEach(li => {
+        items.push({ text: li.firstChild.textContent, checked: li.classList.contains("checked") });
+    });
+    localStorage.setItem("bucketList", JSON.stringify(items));
+}
 
-                            const items = listContainer.querySelectorAll("li");
-                            items.forEach((item) => {
-                                item.addEventListener("click", () => {
-                                    item.classList.toggle("checked");
-                                    saveData();
-                                });
+function showItem() {
+    const savedData = localStorage.getItem("bucketList");
+    if (savedData) {
+        const items = JSON.parse(savedData);
+        listContainer.innerHTML = ""; // Clear the list first
+        items.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item.text;
+            if (item.checked) {
+                li.classList.add("checked");
+            }
 
-                                const span = item.querySelector("span");
-                                    if (span) {
-                                        span.addEventListener("click", (e) => {
-                                        e.stopPropagation(); // Prevent triggering the LI click event
-                                        item.remove();
-                                        saveData();
-                                    });
-                                }
-                            });
-                        }
-                    }
+            const span = document.createElement("span");
+            span.textContent = "\u00d7";
+            li.appendChild(span);
 
-                    showItem();
+            listContainer.appendChild(li);
+            attachEventListeners(li); // Re-bind event listeners
+        });
+    }
+}
+
+// Load saved items on page load
+showItem();
+
                 </script>
         </div>
         
