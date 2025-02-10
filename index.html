@@ -14,6 +14,35 @@
 
 </head>
 <body id="bodyi">
+<div class="heart-container"></div>
+    <script>
+const heartContainer = document.querySelector('.heart-container');
+const maxHearts = 12;  // Limit the maximum number of hearts on screen at once
+
+function createHeart() {
+    // If the number of hearts on screen is less than the max allowed, create a new one
+    if (heartContainer.children.length < maxHearts) {
+        const heart = document.createElement('span');
+        heart.classList.add('heart');
+        heart.textContent = '❤️';
+        heart.style.left = `${Math.random() * 100}%`;  // Random horizontal position
+        heart.style.animationDuration = `${Math.random() * 3 + 4}s`;  // Random animation speed
+
+        heartContainer.appendChild(heart);
+
+        // Remove heart after animation ends
+        heart.addEventListener('animationend', () => {
+            heart.remove();
+        });
+    }
+}
+
+// Create hearts every 2 seconds
+setInterval(createHeart, 2000);
+
+    </script>
+
+    
     <div class="login-container">
         <h2 id="h2i">Login here!</h2>
         <form id="loginForm">
