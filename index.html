@@ -9,20 +9,20 @@
 <body id="bodyi">
     <div class="heart-container"></div>
     <script>
-const heartContainer = document.querySelector('.heart-container');
-const maxHearts = 12;
+    const heartContainer = document.querySelector('.heart-container');
+    const maxHearts = 12;
 
-function createHeart() {
-    if (heartContainer.children.length < maxHearts) {
-        const heart = document.createElement('span');
-        heart.classList.add('heart');
-        heart.textContent = '❤️';
-        heart.style.left = `${Math.random() * 100}%`;
-        heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
+    function createHeart() {
+        if (heartContainer.children.length < maxHearts) {
+            const heart = document.createElement('span');
+            heart.classList.add('heart');
+            heart.textContent = '♥️';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
 
-        heartContainer.appendChild(heart);
+            heartContainer.appendChild(heart);
 
-        heart.addEventListener('animationend', () => {
+            heart.addEventListener('animationend', () => {
             heart.remove();
         });
     }
