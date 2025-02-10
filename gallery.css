@@ -252,7 +252,6 @@ body#bodyi {
     position: absolute;
     bottom: -50px;
     font-size: 3rem;
-    color: red;
     animation: floatUp 4s infinite;
 }
 
@@ -280,7 +279,7 @@ body#bodyi {
     margin-left: 35%;
     margin-right: 35%;
     width: 100%;
-    z-index: 999;
+    z-index: 9999;
 }
 
 h2#h2i {
