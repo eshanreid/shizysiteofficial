@@ -33,15 +33,15 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
+    flex-direction: column;
 }
 
 .main-container {
     color: white;
     height: 10rem;
     width: 100%;
-    margin: 5rem auto 5rem auto;
+    margin: 5rem auto 0 auto;
     text-align: center;
-    padding-bottom: 5rem;
 }
 
 #welcomeh {
@@ -58,7 +58,8 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
-    margin-top: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .gallery-img {
