@@ -290,6 +290,7 @@ button#butti {
   
   button#butti:hover {
     background-color: red;
+    cursor: pointer;
   }
 
 .error {
