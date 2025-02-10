@@ -144,7 +144,7 @@ nav ul li {
 }
 nav ul li a {
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     height: 100%;
     padding: 0 2rem;
     display: flex;
