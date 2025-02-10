@@ -58,8 +58,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
-    margin: 0 1rem 1rem 2rem;
-    justify-content: center;
+    margin: 0 0.8rem 1rem 2rem;
 }
 
 .gallery-img {
