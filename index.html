@@ -5,44 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logingh</title>
     <link rel="stylesheet" href="gallery.css">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="ShizySite" />
-    <link rel="manifest" href="/site.webmanifest" />
-
 </head>
 <body id="bodyi">
-<div class="heart-container"></div>
+    <div class="heart-container"></div>
     <script>
 const heartContainer = document.querySelector('.heart-container');
-const maxHearts = 12;  // Limit the maximum number of hearts on screen at once
+const maxHearts = 12;
 
 function createHeart() {
-    // If the number of hearts on screen is less than the max allowed, create a new one
     if (heartContainer.children.length < maxHearts) {
         const heart = document.createElement('span');
         heart.classList.add('heart');
         heart.textContent = '❤️';
-        heart.style.left = `${Math.random() * 100}%`;  // Random horizontal position
-        heart.style.animationDuration = `${Math.random() * 3 + 4}s`;  // Random animation speed
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.animationDuration = `${Math.random() * 3 + 4}s`;
 
         heartContainer.appendChild(heart);
 
-        // Remove heart after animation ends
         heart.addEventListener('animationend', () => {
             heart.remove();
         });
     }
 }
 
-// Create hearts every 2 seconds
 setInterval(createHeart, 2000);
 
     </script>
-
-    
     <div class="login-container">
         <h2 id="h2i">Login here!</h2>
         <form id="loginForm">
