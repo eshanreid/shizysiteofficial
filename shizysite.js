@@ -34,39 +34,3 @@ function hideSidebar() {
 }
 
 
-// bucket list
-
-// script.js
-
-// Select the bucket list
-const bucketList = document.getElementById('bucket-list');
-
-// Load the saved state from localStorage
-function loadState() {
-    const savedState = JSON.parse(localStorage.getItem('bucketListState')) || {};
-    Array.from(bucketList.children).forEach((item, index) => {
-        if (savedState[index]) {
-            item.classList.add('checked');
-        }
-    });
-}
-
-// Save the current state to localStorage
-function saveState() {
-    const state = {};
-    Array.from(bucketList.children).forEach((item, index) => {
-        state[index] = item.classList.contains('checked');
-    });
-    localStorage.setItem('bucketListState', JSON.stringify(state));
-}
-
-// Add event listeners to each list item
-bucketList.addEventListener('click', (event) => {
-    if (event.target.tagName === 'LI') {
-        event.target.classList.toggle('checked');
-        saveState();
-    }
-});
-
-// Load the state when the page loads
-loadState();
