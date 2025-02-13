@@ -22,7 +22,7 @@ body {
     justify-content: flex-start;
 }
 #logo {
-    color: white;
+    color: #950101;
     font-family: 'Pacifico', cursive;
     font-size: clamp(0.5rem, 1.5rem, 2rem);
     margin-left: 1.5rem;
@@ -74,7 +74,7 @@ input {
     outline: none;
     padding: 1rem 3rem;
     background: #950101;
-    color: #fff;
+    color: goldenrod;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 2.1rem;
@@ -89,6 +89,7 @@ input {
     user-select: none;
     cursor: pointer;
     position: relative;
+    color: #950101;
 }
 #list-container li::before {
     content: '';
