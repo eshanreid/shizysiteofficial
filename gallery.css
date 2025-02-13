@@ -21,7 +21,7 @@ body {
     justify-content: flex-start;
 }
 #logo {
-    color: white;
+    color: #950101;
     font-family: 'Pacifico', cursive;
     font-size: clamp(0.5rem, 1.5rem, 2rem);
     margin-left: 1.5rem;
