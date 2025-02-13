@@ -37,7 +37,7 @@ main {
 }
 
 .main-container {
-    color: goldenrod;
+    color: white;
     height: 10rem;
     width: 100%;
     margin: 4rem auto 0 auto;
@@ -170,7 +170,7 @@ nav ul li {
     height: 4.7rem;
 }
 nav ul li a {
-    color: white;
+    color: goldenrod;
     text-decoration: none;
     height: 100%;
     padding: 0 2rem;
@@ -202,6 +202,7 @@ nav ul li a:active {
 .sidebar li {
     width: 100%;
     margin-bottom: 1rem;
+    color: goldenrod;
 }
 .sidebar a {
     width: 100%;
