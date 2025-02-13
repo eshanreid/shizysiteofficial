@@ -288,12 +288,14 @@ body#bodyi {
 
 h2#h2i {
     margin-bottom: 20px;
+    color: #950101;
 }
 
 label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
+    color: #950101;
 }
 
 input {
@@ -319,6 +321,7 @@ button#butti {
     transition: 0.5s;
     transition-property: box-shadow;
     float: right;
+    cursor: pointer;
   }
   
   button#butti {
